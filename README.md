@@ -60,3 +60,24 @@ Historically, the JavaScript standard explicitly stated that object keys can be 
 For now, your best option is to just use the "Raw" button to see the raw JSON. This is what the server sent. The "Parsed" buttons represents what you'll get from `JSON.parse`.
 
 In future JSON Formatter might switch from using `JSON.parse` to a custom parser (if performance allows) in order to detect when a value has been 'changed' by parsing and show an appropriate warning.
+## 🚀 API de Ingestión y Búsqueda Semántica (RAG)
+
+El backend expone una API REST construida sobre **FastAPI** que encapsula el pipeline de normalización, chunking consciente de tokens y recuperación densa basada en representaciones vectoriales multilingües.
+
+### Documentación Interactiva
+Con el servidor levantado, la documentación OpenAPI interactiva está disponible en:
+- **Swagger UI**: [http://localhost:8000/docs](http://localhost:8000/docs)
+- **ReDoc**: [http://localhost:8000/redoc](http://localhost:8000/redoc)
+
+---
+
+### Endpoints Disponibles
+
+#### 1. `GET /health`
+Verificación de disponibilidad operativa del servicio.
+* **Respuesta (`200 OK`)**:
+  ```json
+  {
+    "status": "ok",
+    "service": "NuevaMente API"
+  }
